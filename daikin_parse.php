@@ -1,8 +1,13 @@
 <?php
 // API sometimes reports 403, so we need to prepare for that
  error_reporting(E_ALL ^ E_WARNING);
+ $data = false;
  $url="http://172.0.200.108/aircon/get_sensor_info";
- $data = file_get_contents($url) or exit("API not responding\n");
+
+// lets try until we get the data
+ do {
+  $data = file_get_contents($url);
+ } while ($data == false);
 
 // exploding data into array
  $result = explode(",",$data);
