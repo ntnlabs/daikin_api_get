@@ -1,7 +1,6 @@
 <?php
  $url="http://172.0.200.108/aircon/get_sensor_info";
  $result = explode(",",file_get_contents($url));
-// print_r($result);
 
  foreach($result as $line)
  {
@@ -14,8 +13,4 @@
  syslog(LOG_INFO, "daikin_outside_temp".$otemp);
  syslog(LOG_INFO, "daikin_power".$mompow);
  closelog();
-// echo($htemp);
-// echo("***");
-// echo($otemp);
-// echo("***");
 ?>
