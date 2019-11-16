@@ -8,8 +8,8 @@
   ${$values[0]} = trim($values[1]);
  }
  openlog("Daikin_0", LOG_PID | LOG_PERROR, LOG_LOCAL0);
- syslog(LOG_INFO, "daikin_inside_temp".$htemp);
- syslog(LOG_INFO, "daikin_outside_temp".$otemp);
- syslog(LOG_INFO, "daikin_power".$mompow);
+ syslog(LOG_INFO, "daikin_inside_temp#".$htemp);
+ syslog(LOG_INFO, "daikin_outside_temp#".$otemp);
+ syslog(LOG_INFO, "daikin_power#".$mompow);
  closelog();
 ?>
