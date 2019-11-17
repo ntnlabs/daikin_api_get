@@ -6,7 +6,9 @@
 
 // lets try until we get the data
  do {
-  $data = file_get_contents($url);
+
+// try and if not OK then wait 1 second
+  $data = file_get_contents($url) or sleep(1);
  } while ($data == false);
 
 // exploding data into array
